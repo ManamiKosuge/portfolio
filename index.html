@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,intial-scale=1.0">
+    <title>Port Folio_TOP</title>
+    <link rel="stylesheet" href="css/ress.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="top" class="allWraper clearfix">
+      <header class="equal-height">
+        <div class="headerContents">
+          <h1>PortFolio</h1>
+          <nav>
+            <ul>
+              <li><a href ="profile.html">自己紹介</a></li>
+              <li><a href ="index.html">業務履歴</a></li>
+              <li><a href ="address.html">連絡先</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="sectionContainer equal-height">
+        <ul class="pankuzuList">
+          <li>業務履歴</li>
+        </ul>
+        <section>
+          <article id="contents1" onclick="func1()">
+            <div class="contents">
+              <figure>
+                <a href="work/work01.html"><img src="images/img_01_1.jpg" alt="株式会社あとらす二十一　その１"></a>
+              </figure>
+              <figcaption>
+                <h2 class="subTitle"><b>大丸松坂屋オンラインショッピング</b></h2>
+                <p class="urlAddress"><a href="https://www.daimaru-matsuzakaya.jp/" target="_blank">https://www.daimaru-matsuzakaya.jp/</a></p>
+                <p>株式会社あとらす二十一に所属していた時に更新していたサイトになります。主に季節のイベントページ（お中元・母の日・父の日・クリスマス等）のページ制作に携わりました。</p>
+              </figcaption>
+            </div>
+          </article>
+          <article>
+            <div class="contents">
+              <figure>
+                <a href="work/work02.html"><img src="images/img_01_2.jpg" alt="株式会社あとらす二十一　その2"></a>
+              </figure>
+              <figcaption>
+                <h2 class="subTitle"><b>コニカミノルタ</b></h2>
+                <p class="urlAddress"><a href="https://www.konicaminolta.jp/business/products/index.html" target="_blank">https://www.konicaminolta.jp/business/products/index.html</a></p>
+                <p>株式会社あとらす二十一に所属していた時に更新していたサイトになります。主に製品ページの更新を週に2,3回の頻度で更新・新規制作していました。</p>
+              </figcaption>
+            </div>
+          </article>
+          <!--<article>
+            <div class="contents">
+              <figure>
+                <a href="https://www.yahoo.co.jp/" target="_blank"><img src="images/img_03.jpg" alt="Yahoo！株式会社"></a>
+              </figure>
+              <figcaption>
+                <h2 class="subTitle"><b>Yahoo!オンラインショッピング</b></h2>
+                <p class="urlAddress"><a href="https://www.yahoo.co.jp/" target="_blank">https://www.yahoo.co.jp/</a></p>
+                <p>スマホ表示で掲載されるYahoo！オンラインショッピングの広告を制作していました。コンサルティングの方とタッグを組み、戦略的に広告を制作していきました。</p>
+              </figcaption>
+            </div>
+          </article>-->
+          <article>
+            <div class="contents">
+              <figure>
+                <a href="work/work03.html" target="_blank"><img src="images/img_04.jpg" alt="株式会社NTTドコモ"></a>
+              </figure>
+              <figcaption>
+                <h2 class="subTitle"><b>dアニメストア ニコニコ支店</b></h2>
+                <p class="urlAddress"><a href="https://site.nicovideo.jp/danime/?ref=nicotop_danime" target="_blank">https://site.nicovideo.jp/danime/?ref=nicotop_danime</a></p>
+                <p>dアニメストアの配信動画チェック、dアニメストア ニコニコ支店のサイト運用（ランキングの修正や、新作の掲載、放映するアニメの動作チェック）を担当しました。</p>
+              </figcaption>
+            </div>
+          </article>
+          <article>
+            <div class="contents">
+              <figure>
+                <a href="work/work04.html"><img src="images/img_05.jpg" alt="株式会社アイプラネット"></a>
+              </figure>
+              <figcaption>
+                <h2 class="subTitle"><b>三菱電機株式会社</b></h2>
+                <p class="urlAddress"><a href="https://www.mitsubishielectric.co.jp/corporate/" target="_blank">https://www.mitsubishielectric.co.jp/corporate/</a></p>
+                <p>三菱電機の企業情報のサイト運用（主に担当したカテゴリとして投資家情報・研究開発の更新、他全般的に。）を担当しました。</p>
+              </figcaption>
+            </div>
+          </article>
+        </section>
+      </div>
+      <div class="pagetop">
+        <p><a href="#pagetop">ページトップへ戻る</a></p>
+      </div>
+      <footer>
+        <p>&copy;PortFolio</p>
+      </footer>
+      <!-- allWraperEnd-->
+    </div>
+  </body>
+  <script type="text/javascript">
+  //高さを揃える
+  function equalHeight(elements) {
+    const target = Array.from(document.querySelectorAll(elements));
+    const heightList = [];
+      target.forEach(element => {
+        const height = element.clientHeight;
+        heightList.push(height);
+      });
+    const maxHeight = Math.max.apply(null,heightList);
+      target.forEach(element => {
+        element.style.height = maxHeight + 'px';
+      });
+    };
+    equalHeight('.equal-height');
+
+    //画面幅に応じてクラスをとる。
+    $(window).on('load resize', function(){
+        var w = $(window).width();
+        var x = 1065;
+        if (w < x) {
+          //画面サイズが1065px未満のときの処理
+          $("div.sectionContainer").removeClass("equal-height");
+          $("div.sectionContainer").css('height','100%');
+          $("header").removeClass("equal-height");
+          $("header").css('height','150px');
+        }else{
+          $("div.sectionContainer").addClass("equal-height");
+          $("div.sectionContainer").css('height','0');
+          $("header").addClass("equal-height");
+          $("header").css('height','100%');
+        }
+      });
+
+    //ページトップに戻る。
+    $(function(){
+      $('a[href="#pagetop"]').click(function(){
+        var speed = 500;
+        var href= $(this).attr("href");
+        var target = $(href == "#pagetop" || href == "" ? 'html' : href);
+        var position = target.offset().top;
+          $("html, body").animate({scrollTop:position}, speed, "swing");
+          return false;
+      });
+    });
+  </script>
+</html>

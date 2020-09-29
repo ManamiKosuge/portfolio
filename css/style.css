@@ -1,0 +1,145 @@
+@charset "UTF-8";
+html{
+  height: 100%;
+  font-family: sans-serif;
+}
+li{
+  list-style: none;
+}
+header{
+  float: left;
+  width: 20%;
+  background-color: gray;
+}
+header .headerContents{
+  height: 500px;
+  margin: 25vh 5vh;
+}
+h1{
+  margin-bottom: 0.7em;
+  font-family: 'Lora', sans-serif;
+}
+nav ul li{
+  padding-bottom: 0.5em;
+}
+nav ul li a{
+  font-size: 1.2em;
+  color: #dcdcdc;
+  text-decoration: none;
+}
+.sectionContainer{
+  position: relative;;
+  float: right;
+  width: 80%;
+  padding: 3%;
+}
+.pankuzuList li{
+  color: #dcdcdc;
+  margin-bottom: 0.5em;ß
+}
+section{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px 10px;
+}
+article{
+  padding: 1em;
+  border-radius: 10px;
+  background-color: #dbdbdb;
+}
+article h2{
+  margin-bottom: 0.5em;
+  font-size: 0.95em;
+}
+.contents figure{
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+.contents figure:hover{
+  opacity: 0.5;
+}
+figcaption p.urlAddress{
+  margin-bottom: 0.5em;
+}
+figcaption p.urlAddress{
+  font-size: 0.8em;
+}
+figcaption p.urlAddress a{
+  color: gray;
+  text-decoration: none;
+  word-break: break-all;
+}
+.pagetop{
+  height: 50px;
+  padding: 0.5em 0;
+  background-color: #a8a8a8;
+  text-align: center;
+  line-height: 2;
+}
+.pagetop p a:before{
+  content: "▲";
+  margin-right: 0.1em;
+}
+.pagetop p a{
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.clearfix::after{
+  display: block;
+  content: "";
+  clear: both;
+}
+@media (min-width: 1065px) {
+  .pagetop,footer{
+    display: none;
+  }
+}
+@media (max-width: 1065px) {
+  header{
+    float: none;
+    width: 100%;
+    background-color: gray;
+    border-radius: 0;
+  }
+  header .headerContents{
+    height: 0;
+    margin: 0;
+  }
+  .sectionContainer{
+    float: none;
+    width: 100%;
+    padding: 3%;
+  }
+  h1{
+    margin: 0;
+    padding: 0.7em;
+    text-align: center;
+    font-family: 'Lora', sans-serif;
+  }
+  nav ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    margin: 0 auto;
+  }
+  nav ul li{
+    text-align: center;
+  }
+  section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  footer{
+    height: 70px;
+    padding: 1em 0;
+    background-color: gray;
+    text-align: center;
+  }
+  footer p{
+    font-size: 1.5em;
+    font-family: 'Lora', sans-serif;
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,intial-scale=1.0">
+    <title>Port Folio_連絡先</title>
+    <link rel="stylesheet" href="css/ress.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_address.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="allWraper clearfix">
+      <header class="equal-height">
+        <div class="headerContents">
+          <h1>PortFolio</h1>
+          <nav>
+            <ul>
+              <li><a href ="profile.html">自己紹介</a></li>
+              <li><a href ="index.html">業務履歴</a></li>
+              <li><a href ="address.html">連絡先</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="sectionContainer equal-height">
+        <ul class="pankuzuList">
+          <li>連絡先</li>
+        </ul>
+        <section>
+          <article>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScG4-rZQb6RuWwHUhf1Mb6VB4N1CJCD4B1LCfJM5dv798Jh1A/viewform?embedded=true" width="640" height="705" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+          </article>
+        </section>
+      </div>
+      <div class="pagetop">
+        <p><a href="#pagetop">ページトップへ戻る</a></p>
+      </div>
+      <footer>
+        <p>&copy;PortFolio</p>
+      </footer>
+      <!-- allWraperEnd -->
+    </div>
+  </body>
+  <script type="text/javascript">
+  //高さを揃える
+  function equalHeight(elements) {
+    const target = Array.from(document.querySelectorAll(elements));
+    const heightList = [];
+      target.forEach(element => {
+        const height = element.clientHeight;
+        heightList.push(height);
+      });
+    const maxHeight = Math.max.apply(null,heightList);
+      target.forEach(element => {
+        element.style.height = maxHeight + 'px';
+      });
+    };
+    equalHeight('.equal-height');
+
+    //画面幅に応じてクラスをとる。
+    $(window).on('load resize', function(){
+        var w = $(window).width();
+        var x = 1065;
+        if (w < x) {
+          //画面サイズが1065px未満のときの処理
+          $("div.sectionContainer").removeClass("equal-height");
+          $("div.sectionContainer").css('height','100%');
+          $("header").removeClass("equal-height");
+          $("header").css('height','150px');
+        }else{
+          $("div.sectionContainer").addClass("equal-height");
+          $("div.sectionContainer").css('height','100%');
+          $("header").addClass("equal-height");
+          $("header").css('height','100%');
+        }
+      });
+
+      //ページトップに戻る。
+      $(function(){
+        $('a[href="#pagetop"]').click(function(){
+          var speed = 500;
+          var href= $(this).attr("href");
+          var target = $(href == "#pagetop" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+            $("html, body").animate({scrollTop:position}, speed, "swing");
+            return false;
+        });
+      });
+  </script>
+</html>
