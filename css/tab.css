@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.tab_item {
+  display: none;
+}
+.is-active-item {
+  display: block;
+}
+.tablist{
+  display: flex;
+}
+.tablist a{
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  padding:0.25em 0.5em;
+}
+.tab_btn{
+  font-size: 1em;
+  padding: 5px;
+  display: inline-block;
+  background-color: inherit;
+  border-right: solid 1px #ccc;
+  opacity: 0.5;
+}
+.is-active-btn{
+  opacity: 1;
+  color: #000;
+}
+.tab_item{
+  width: 100%;
+  padding: 1em 0;
+  border-top: solid 1px #ccc;
+}
