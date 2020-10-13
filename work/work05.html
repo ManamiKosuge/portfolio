@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,intial-scale=1.0">
+    <title>Port Folio_Work05</title>
+    <link rel="stylesheet" href="../css/ress.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="allWraper clearfix">
+      <header class="equal-height">
+        <div class="headerContents">
+          <h1>PortFolio</h1>
+          <nav>
+            <ul>
+              <li><a href ="../profile.html">自己紹介</a></li>
+              <li><a href ="../index.html">業務履歴</a></li>
+              <li><a href ="../address.html">連絡先</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="sectionContainer equal-height">
+        <ul class="pankuzuList">
+          <li>業務履歴</li>
+          <li>習作</li>
+          <li>第1回改修</li>
+        </ul>
+        <section>
+          <article>
+            <div class="contents">
+              <figcaption>
+                <h2 class="subTitle"><b>第1回改修</b></h2>
+                <p class="urlAddress">2020.10.12</p>
+                <p>作品や実績をさらに掲載するために掲載場所を拡張。さらに修正を示すためのNEWS欄も増設。サイトの雰囲気を損なわないよう、シンプルな設置と動作に留めました。</p>
+                <dl class="mt10">
+                  <dt>制作時期</dt>
+                  <dd>2020.10.12</dd>
+                </dl>
+                <dl>
+                  <dt>更新箇所</dt>
+                  <dd>タブの設置、更新を表すためのNEWS欄の増設</dd>
+                </dl>
+                <dl>
+                  <dt>使用ツール</dt>
+                  <dd>Atom,Photoshop CS5.1</dd>
+                </dl>
+                <dl>
+                  <dt>制作時間</dt>
+                  <dd>約1時間（タブ設置：30分、NEWS欄設置：30分）</dd>
+                </dl>
+              </figcaption>
+              <div class="figure_col onlyOne">
+                <figure>
+                  <p class="caption">ラフ</p>
+                  <img src="images/gazou05_1.jpg" alt="第1回改修　ラフ">
+                </figure>
+              </div>
+              <div class="figure_col onlyOne">
+                <figure>
+                  <p class="caption">タブとNEWS欄設置（PC表示）</p>
+                  <img src="images/gazou05_2.jpg" alt="第1回改修　タブとNEWS欄設置（PC表示）">
+                </figure>
+              </div>
+              <div class="figure_col onlyOne">
+                <figure>
+                  <p class="caption">タブとNEWS欄設置（SP表示）</p>
+                  <img src="images/gazou05_3.jpg" alt="第1回改修　タブとNEWS欄設置（SP表示）">
+                </figure>
+              </div>
+              <!-- figure_colEnd-->
+            </div>
+          </article>
+        </section>
+      </div>
+      <div class="pagetop">
+        <p><a href="#pagetop">ページトップへ戻る</a></p>
+      </div>
+      <footer>
+        <p>&copy;PortFolio</p>
+      </footer>
+      <!-- allWraperEnd-->
+    </div>
+  </body>
+  <script type="text/javascript">
+  //高さを揃える
+  function equalHeight(elements) {
+    const target = Array.from(document.querySelectorAll(elements));
+    const heightList = [];
+      target.forEach(element => {
+        const height = element.clientHeight;
+        heightList.push(height);
+      });
+    const maxHeight = Math.max.apply(null,heightList);
+      target.forEach(element => {
+        element.style.height = maxHeight + 'px';
+      });
+    };
+    equalHeight('.equal-height');
+
+    //画面幅に応じてクラスをとる。
+    $(window).on('load resize', function(){
+        var w = $(window).width();
+        var x = 1065;
+        if (w < x) {
+          //画面サイズが1065px未満のときの処理
+          $("div.sectionContainer").removeClass("equal-height");
+          $("div.sectionContainer").css('height','100%');
+          $("header").removeClass("equal-height");
+          $("header").css('height','150px');
+        }else{
+          $("div.sectionContainer").addClass("equal-height");
+          $("div.sectionContainer").css('height','100%');
+          $("header").addClass("equal-height");
+          $("header").css('height','100%');
+        }
+      });
+
+      //ページトップに戻る。
+      $(function(){
+        $('a[href="#pagetop"]').click(function(){
+          var speed = 500;
+          var href= $(this).attr("href");
+          var target = $(href == "#pagetop" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+            $("html, body").animate({scrollTop:position}, speed, "swing");
+            return false;
+        });
+      });
+  </script>
+</html>
