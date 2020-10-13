@@ -2,9 +2,12 @@
 .pankuzuList li{
   display: inline-block;
 }
-.pankuzuList li:first-child::after{
+.pankuzuList li::after{
   content: ">";
   margin-left: 0.5em;
+}
+.pankuzuList li:last-child::after{
+  display: none;
 }
 section {
   grid-template-columns: 1fr;
@@ -13,6 +16,10 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
+}
+.figure_col.onlyOne{
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .contents figure{
   margin:1em 0 0 0;
