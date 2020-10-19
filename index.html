@@ -15,7 +15,7 @@
     <div id="top" class="allWraper clearfix">
       <header class="equal-height">
         <div class="headerContents">
-          <h1>PortFolio</h1>
+          <h1><a href="index.html">PortFolio</a></h1>
           <nav>
             <ul>
               <li><a href ="profile.html">自己紹介</a></li>
@@ -24,13 +24,28 @@
             </ul>
           </nav>
 
-          <div class="newsBox">
+          <!--<div class="newsBox">
             <p class="title">NEWS</p>
-            <dl class="inner">
-              <dt>2020.10.10</dt>
-              <dd>カテゴリを増設しました。（業務制作物と習作に分離）</dd>
-            </dl>
-          </div>
+            <div class="scrollWrap">
+              <span class="arrow before"></span>
+              <div class="inner">
+                <dl>
+                  <dt>2020.10.10</dt>
+                  <dd>カテゴリを増設しました。（業務制作物と習作に分離）</dd>
+                </dl>
+                <dl>
+                  <dt>2020.10.13</dt>
+                  <dd>習作に１点成果を追加しました。（10月10日更新分）</dd>
+                </dl>
+                <dl>
+                  <dt>2020.10.14</dt>
+                  <dd>タイトルにトップページへ戻るリンクと、PCとSPでリンク遷移場所を変更しました。</dd>
+                </dl>
+              </div>
+              <span class="arrow after"></span>
+            </div>
+            <!--newsBoxEnd-->
+          <!--</div>-->
         </div>
       </header>
       <div class="sectionContainer equal-height">
@@ -44,10 +59,10 @@
         </ul>
         <div id="tab01" class="tab_item is-active-item">
           <section>
-          <article id="contents1" onclick="func1()">
+          <article>
             <div class="contents">
               <figure>
-                <a href="work/work01.html"><img src="images/img_01.jpg" alt="株式会社あとらす二十一　その１"></a>
+                <a class="changeWin" href="work/work01.html" target="_blank"><img src="images/img_01.jpg" alt="株式会社あとらす二十一　その１"></a>
               </figure>
               <figcaption>
                 <h2 class="subTitle"><b>大丸松坂屋オンラインショッピング</b></h2>
@@ -59,7 +74,7 @@
           <article>
             <div class="contents">
               <figure>
-                <a href="work/work02.html"><img src="images/img_02.jpg" alt="株式会社あとらす二十一　その2"></a>
+                <a class="changeWin" href="work/work02.html" target="_blank"><img src="images/img_02.jpg" alt="株式会社あとらす二十一　その2"></a>
               </figure>
               <figcaption>
                 <h2 class="subTitle"><b>コニカミノルタ</b></h2>
@@ -71,7 +86,7 @@
           <article>
             <div class="contents">
               <figure>
-                <a href="work/work03.html" target="_blank"><img src="images/img_04.jpg" alt="株式会社NTTドコモ"></a>
+                <a class="changeWin" href="work/work03.html" target="_blank"><img src="images/img_04.jpg" alt="株式会社NTTドコモ"></a>
               </figure>
               <figcaption>
                 <h2 class="subTitle"><b>dアニメストア ニコニコ支店</b></h2>
@@ -83,7 +98,7 @@
           <article>
             <div class="contents">
               <figure>
-                <a href="work/work04.html"><img src="images/img_05.jpg" alt="株式会社アイプラネット"></a>
+                <a class="changeWin" href="work/work04.html" target="_blank"><img src="images/img_05.jpg" alt="株式会社アイプラネット"></a>
               </figure>
               <figcaption>
                 <h2 class="subTitle"><b>三菱電機株式会社</b></h2>
@@ -100,7 +115,7 @@
           <article>
             <div class="contents">
               <figure>
-                <a href="work/work05.html"><img src="images/img2_01.jpg" alt="第一回改修"></a>
+                <a class="changeWin" href="work/work05.html" target="_blank"><img src="images/img2_01.jpg" alt="第一回改修"></a>
               </figure>
               <figcaption>
                 <h2 class="subTitle"><b>第1回改修</b></h2>
@@ -144,17 +159,18 @@
         var w = $(window).width();
         var x = 1065;
         if (w < x) {
-          //画面サイズが1065px未満のときの処理
+          //画面サイズが1065px未満のときの処理(高さ合わせと表示方法の切り替え)
           $("div.sectionContainer").removeClass("equal-height");
           $("div.sectionContainer").css('height','100%');
           $("header").removeClass("equal-height");
           $("header").css('height','200px');
+          $(".changeWin").removeAttr("target");
         }else{
           $("div.sectionContainer").addClass("equal-height");
           $("div.sectionContainer").css('height','0');
           $("header").addClass("equal-height");
           $("header").css('height','100%');
-        }
+        };
       });
 
     //ページトップに戻る。
@@ -178,5 +194,20 @@
         $(this).addClass('is-active-btn');
       });
     });
+
+    //News回転
+    document.querySelectorAll('.before').forEach(elm => {
+	     elm.onclick = function () {
+		       let div = this.parentNode.querySelector('.scrollWrap .inner');
+		         div.scrollLeft -= (div.clientWidth);
+	          };
+    });
+    document.querySelectorAll('.after').forEach(elm => {
+	     elm.onclick = function () {
+		       let div = this.parentNode.querySelector('.scrollWrap .inner');
+		         div.scrollLeft += (div.clientWidth);
+	          };
+    });
+
   </script>
 </html>
