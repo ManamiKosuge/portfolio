@@ -19,6 +19,10 @@ h1{
   margin-bottom: 0.7em;
   font-family: 'Lora', sans-serif;
 }
+h1 a{
+  text-decoration: none;
+  color: #333;
+}
 nav ul li{
   padding-bottom: 0.5em;
 }

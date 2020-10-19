@@ -7,15 +7,65 @@
   font-family: 'Lora', sans-serif;
   font-size: 1.2em;
 }
-.newsBox .inner{
-  margin-top: 3%;
-  padding: 0.5em;
+.scrollWrap{
+  position: relative;
+  padding: 0 1.5em 0 0.5em;
+  border: 1px solid #ccc;
+  width: 100%;
   font-size: 0.8em;
   background-color: #fff;
 }
-.newsBox dd{
-  margin-top: 0.5em;
-  line-height: 1.2;
+.scrollWrap .inner{
+  white-space: nowrap;
+  overflow-x: hidden;
+  margin: 0 0.1em 0 1em;
+  scroll-behavior: smooth;
+  scroll-snap-type:inline;
+}
+.scrollWrap .inner dl{
+  white-space: normal;
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 1em 0 0;
+  scroll-snap-align: center;
+}
+.arrow{
+  display: inline-block;
+  position: relative;
+  border-radius: 50%;
+  width: 1em;
+  height: 1em;
+  cursor: pointer;
+  border: 1px solid #808080;
+  vertical-align: middle;
+  margin-bottom: 4px;
+}
+.arrow::before{
+  content: "";
+  position: absolute;
+  width: 0.4em;
+  height: 0.4em;
+  border-left: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+  top: 40%;
+  left: 28%;
+  transform: rotate(135deg);
+}
+.arrow.before:before {
+	top:28%;
+	left:35%;
+	transform:rotate(45deg);
+}
+.arrow.after:before {
+	top:28%;
+	left:20%;
+	transform:rotate(-135deg);
+}
+.arrow:hover {
+	background-color:#808080;
+}
+.arrow:hover:before {
+	border-color:white;
 }
 @media (max-width: 1065px) {
   .newsBox{
@@ -26,20 +76,14 @@
   .newsBox p.title{
     display: none;
   }
-  .newsBox .inner{
-    text-align: center;
-    display: block;
-    padding: 0.5em;
-    font-size: 0.8em;
-    background-color: #fff;
+  .scrollWrap{
+    padding: 0 0.5em;
+    border-radius: 0;
   }
-  .newsBox dt{
-    display: inline-block;
-    margin-right: 1em;
+  .scrollWrap .inner{
+    overflow-x:auto;
   }
-  .newsBox dd{
-    display: inline-block;
-    margin-top: 0.5em;
-    line-height: 1.2;
+  .arrow{
+    display: none;
   }
 }
