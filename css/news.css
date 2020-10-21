@@ -94,6 +94,12 @@
     padding: 0 0.5em;
     border-radius: 0;
   }
+  .scrollWrap .sp_inner{
+    background-image: url(../images/sp_arr_be.png),url(../images/sp_arr_af.png);
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-position: left,right;
+  }
   .scrollWrap .inner{
     white-space: nowrap;
     overflow-x: scroll;
