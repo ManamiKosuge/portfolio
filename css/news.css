@@ -6,19 +6,19 @@
   font-weight: bold;
   font-family: 'Lora', sans-serif;
   font-size: 1.2em;
+  text-indent: 0.3em;
 }
 .scrollWrap{
+  border-radius: 0.5em;
   position: relative;
-  padding: 0 1.5em 0 0.5em;
+  padding: 1em;
   border: 1px solid #ccc;
   width: 100%;
   font-size: 0.8em;
   background-color: #fff;
 }
 .scrollWrap .inner{
-  white-space: nowrap;
   overflow-x: hidden;
-  margin: 0 0.1em 0 1em;
   scroll-behavior: smooth;
   scroll-snap-type:inline;
 }
@@ -26,8 +26,15 @@
   white-space: normal;
   vertical-align: top;
   display: inline-block;
-  margin: 0 1em 0 0;
   scroll-snap-align: center;
+  border-bottom: 1px dotted;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+}
+.scrollWrap .inner dl:last-child{
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 .arrow{
   display: inline-block;
@@ -51,10 +58,17 @@
   left: 28%;
   transform: rotate(135deg);
 }
+.arrow.before{
+  top: 3em;
+}
 .arrow.before:before {
 	top:28%;
 	left:35%;
 	transform:rotate(45deg);
+}
+.arrow.after{
+  top: 3em;
+  left: 93%;
 }
 .arrow.after:before {
 	top:28%;
@@ -81,7 +95,13 @@
     border-radius: 0;
   }
   .scrollWrap .inner{
-    overflow-x:auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+  }
+  .scrollWrap .inner dl{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
   }
   .arrow{
     display: none;
