@@ -9,21 +9,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/work_header.js"></script>
   </head>
   <body>
     <div class="allWraper clearfix">
-      <header class="equal-height">
-        <div class="headerContents">
-          <h1><a href="../index.html">PortFolio</a></h1>
-          <nav>
-            <ul>
-              <li><a href ="../profile.html">自己紹介</a></li>
-              <li><a href ="../index.html">業務履歴</a></li>
-              <li><a href ="../address.html">連絡先</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <script type="text/javascript">header('../');</script>
       <div class="sectionContainer equal-height">
         <ul class="pankuzuList">
           <li>業務履歴</li>
@@ -89,50 +79,5 @@
       <!-- allWraperEnd-->
     </div>
   </body>
-  <script type="text/javascript">
-  //高さを揃える
-  function equalHeight(elements) {
-    const target = Array.from(document.querySelectorAll(elements));
-    const heightList = [];
-      target.forEach(element => {
-        const height = element.clientHeight;
-        heightList.push(height);
-      });
-    const maxHeight = Math.max.apply(null,heightList);
-      target.forEach(element => {
-        element.style.height = maxHeight + 'px';
-      });
-    };
-    equalHeight('.equal-height');
-
-    //画面幅に応じてクラスをとる。
-    $(window).on('load resize', function(){
-        var w = $(window).width();
-        var x = 1065;
-        if (w < x) {
-          //画面サイズが1065px未満のときの処理
-          $("div.sectionContainer").removeClass("equal-height");
-          $("div.sectionContainer").css('height','100%');
-          $("header").removeClass("equal-height");
-          $("header").css('height','150px');
-        }else{
-          $("div.sectionContainer").addClass("equal-height");
-          $("div.sectionContainer").css('height','100%');
-          $("header").addClass("equal-height");
-          $("header").css('height','100%');
-        }
-      });
-
-      //ページトップに戻る。
-      $(function(){
-        $('a[href="#pagetop"]').click(function(){
-          var speed = 500;
-          var href= $(this).attr("href");
-          var target = $(href == "#pagetop" || href == "" ? 'html' : href);
-          var position = target.offset().top;
-            $("html, body").animate({scrollTop:position}, speed, "swing");
-            return false;
-        });
-      });
-  </script>
+  <script type="text/javascript" src="../js/base.js"></script>
 </html>
