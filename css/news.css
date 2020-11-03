@@ -3,19 +3,19 @@
   margin-top: 20%;
 }
 .newsBox p.title{
-  font-weight: bold;
   font-family: 'Lora', sans-serif;
   font-size: 1.2em;
+  font-weight: bold;
   text-indent: 0.3em;
 }
 .scrollWrap{
-  border-radius: 0.5em;
   position: relative;
-  padding: 1em;
-  border: 1px solid #ccc;
   width: 100%;
-  font-size: 0.8em;
+  padding: 1em;
   background-color: #fff;
+  font-size: 0.8em;
+  border-radius: 0.5em;
+  border: 1px solid #ccc;
 }
 .scrollWrap .inner{
   overflow-x: hidden;
@@ -23,39 +23,39 @@
   scroll-snap-type:inline;
 }
 .scrollWrap .inner dl{
-  white-space: normal;
-  vertical-align: top;
   display: inline-block;
-  scroll-snap-align: center;
-  border-bottom: 1px dotted;
   margin-bottom: 1em;
   padding-bottom: 0.5em;
+  white-space: normal;
+  vertical-align: top;
+  border-bottom: 1px dotted;
+  scroll-snap-align: center;
 }
 .scrollWrap .inner dl:last-child{
-  border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
+  border-bottom: none;
 }
 .arrow{
   display: inline-block;
   position: relative;
-  border-radius: 50%;
   width: 1em;
   height: 1em;
-  cursor: pointer;
-  border: 1px solid #808080;
-  vertical-align: middle;
   margin-bottom: 4px;
+  vertical-align: middle;
+  border-radius: 50%;
+  border: 1px solid #808080;
+  cursor: pointer;
 }
 .arrow::before{
-  content: "";
   position: absolute;
-  width: 0.4em;
-  height: 0.4em;
-  border-left: 1px solid #808080;
-  border-bottom: 1px solid #808080;
   top: 40%;
   left: 28%;
+  width: 0.4em;
+  height: 0.4em;
+  content: "";
+  border-left: 1px solid #808080;
+  border-bottom: 1px solid #808080;
   transform: rotate(135deg);
 }
 .arrow.before{
