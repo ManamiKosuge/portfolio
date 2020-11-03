@@ -3,8 +3,8 @@
   display: inline-block;
 }
 .pankuzuList li::after{
-  content: ">";
   margin-left: 0.5em;
+  content: ">";
 }
 .pankuzuList li:last-child::after{
   display: none;
@@ -38,17 +38,17 @@ figure .caption{
   font-size: 0.8em;
 }
 article h2{
-  font-size: 1.2em;
   margin-bottom: 0;
+  font-size: 1.2em;
 }
 figcaption dl dt,figcaption dl dd{
   font-size: 0.8em;
   word-break: break-all;
 }
 figcaption dl dt{
+  display: inline-block;
   margin-right: 0.1em;
   font-weight: bold;
-  display: inline-block;
 }
 figcaption dl dt:after{
   content: "：";
